@@ -3,7 +3,7 @@ phases:
   install:
     runtime-versions:
       android: 29
-      java: openjdk11
+      java: openjdk8
     commands:
       - pwd
   pre_build:
