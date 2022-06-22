@@ -2,7 +2,7 @@ version: 0.2
 phases:
   install:
     runtime-versions:
-      android: 28
+      android: 29
       java: corretto8
     commands:
       - pwd
