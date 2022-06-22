@@ -13,7 +13,7 @@ phases:
       - export PATH="$PATH:`pwd`/flutter/bin"
       - flutter precache
       - flutter doctor
-build:
+  build:
     commands:
       - echo Build started on `date`
       - flutter build apk --no-shrink
