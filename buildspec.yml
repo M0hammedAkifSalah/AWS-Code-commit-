@@ -16,7 +16,7 @@ phases:
   build:
     commands:
       - echo Build started on `date`
-      -flutter pub get
+      - flutter pub get
       - flutter build apk --no-shrink
       - ls -al
   post_build:
