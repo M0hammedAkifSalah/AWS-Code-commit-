@@ -6,6 +6,8 @@ phases:
       java: corretto8
     commands:
       - pwd
+      - apt update -y
+      - apt-get update -y
       - apt install clang
       - apt install cmake
       - apt install ninja-build
