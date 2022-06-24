@@ -2,10 +2,10 @@ version: 0.2
 phases:
   install:
     runtime-versions:
-      android: 29
       java: corretto11
     commands:
       - pwd
+      - sudo apt update && sudo apt install android-sdk
   pre_build:
     commands:
       - echo Pre Build started on `date`
