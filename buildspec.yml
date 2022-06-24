@@ -19,6 +19,7 @@ phases:
       - git clone https://github.com/flutter/flutter.git -b stable
       - export PATH="$PATH:`pwd`/flutter/bin"
       - flutter precache
+      - path/to/sdkmanager --install "cmdline-tools;latest"
       - flutter doctor --android-licenses
       - flutter doctor
   build:
