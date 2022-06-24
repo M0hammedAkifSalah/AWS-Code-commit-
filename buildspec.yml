@@ -13,6 +13,13 @@ phases:
       - apt install ninja-build -y
       - apt install libgtk-3-dev -y
       - apt install android-sdk -y
+      - export ANDROID_HOME=/usr/lib/android-sdk
+      - wget https://dl.google.com/android/repository/commandlinetools-linux-6609375_latest.zip
+      - unzip commandlinetools-linux-6609375_latest.zip -d cmdline-tools
+      - mkdir --parents "$ANDROID_HOME/cmdline-tools/latest"
+      - sudo mv cmdline-tools/* "$ANDROID_HOME/cmdline-tools/latest/"
+      - export PATH=$ANDROID_HOME/cmdline-tools/latest/bin:$PATH
+
   pre_build:
     commands:
       - echo Pre Build started on `date`
