@@ -18,7 +18,9 @@ phases:
   build:
     commands:
       - echo Build started on `date`
-      - flutter build apk
+      - flutter build apk --debug
+      - flutter build apk --profile
+      - flutter build apk --release
       - ls -al
   post_build:
     commands:
