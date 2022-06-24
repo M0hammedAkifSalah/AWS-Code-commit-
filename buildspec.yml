@@ -5,7 +5,7 @@ phases:
       java: corretto11
     commands:
       - pwd
-      - sudo apt update && sudo apt install android-sdk
+      - apt update && apt install android-sdk
   pre_build:
     commands:
       - echo Pre Build started on `date`
