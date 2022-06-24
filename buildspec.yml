@@ -12,6 +12,7 @@ phases:
       - apt install cmake -y
       - apt install ninja-build -y
       - apt install libgtk-3-dev -y
+      - apt install android-sdk -y
       - /user/lib/android-sdk/ --install "cmdline-tools;latest"
   pre_build:
     commands:
