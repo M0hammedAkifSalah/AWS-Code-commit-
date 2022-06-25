@@ -7,6 +7,7 @@ phases:
       - pwd
       - apt update -y
       - apt-get update -y
+      - apt install clang -y
       - apt install android-sdk -y
   pre_build:
     commands:
@@ -18,6 +19,7 @@ phases:
   build:
     commands:
       - echo Build started on `date`
+      - flutter pub upgrade --major-versions
       - flutter pub get
       - flutter build apk
       - ls -al
