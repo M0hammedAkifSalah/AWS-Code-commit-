@@ -18,6 +18,11 @@ phases:
       - export ANDROID_SDK_ROOT=/opt/android-sdk
       - echo "export ANDROID_SDK_ROOT=/opt/android-sdk" >> ~/.bashrc
       - echo "export PATH=$PATH:$ANDROID_SDK_ROOT/tools" >> ~/.bashrc
+      - sdkmanager --list
+      - sdkmanager --update
+      - sdkmanager --install "cmdline-tools;latest"
+      - flutter doctor --android-licenses
+      - flutter doctor
       - source ~/.bashrc
       - cd /opt/android-sdk/tools/bin
       - ./sdkmanager --update
