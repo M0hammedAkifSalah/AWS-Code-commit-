@@ -9,7 +9,7 @@ phases:
       - apt-get update -y
       - apt install android-sdk -y
       - sudo apt update
-      - sudo apt install openjdk-8-jre unzip
+      - sudo apt install openjdk-8-jre unzip -y
       - wget https://dl.google.com/android/repository/sdk-tools-linux-4333796.zip
       - unzip sdk-tools-linux-4333796.zip -d android-sdk
       - sudo mv android-sdk /opt/
