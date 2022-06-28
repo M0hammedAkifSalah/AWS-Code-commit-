@@ -1,6 +1,4 @@
 version: 0.2
-env:
-  shell: bash
 phases:
   install:
     runtime-versions:
@@ -10,28 +8,15 @@ phases:
       - apt update -y
       - apt-get update -y
       - apt install android-sdk -y
-      - sudo apt update
-      - sudo apt install openjdk-8-jre unzip -y
-      - wget https://dl.google.com/android/repository/sdk-tools-linux-4333796.zip
-      - unzip sdk-tools-linux-4333796.zip -d android-sdk
-      - sudo mv android-sdk /opt/
-      - export ANDROID_SDK_ROOT=/opt/android-sdk
-      - echo "export ANDROID_SDK_ROOT=/opt/android-sdk" >> ~/.bashrc
-      - echo "export PATH=$PATH:$ANDROID_SDK_ROOT/tools" >> ~/.bashrc
-      - cd /opt/android-sdk/tools/bin
-      - ./sdkmanager --update
-      - ./sdkmanager --licenses
-      - ./sdkmanager "system-images;android-25;google_apis;armeabi-v7a" "emulator" "platform-tools"
-      - touch ~ubuntu/.android/repositories.cfg
-      - mkdir /opt/android-sdk/platforms
-      - /opt/android-sdk/tools/bin/avdmanager -v create avd -f -n MyAVD -k "system-images;android-27;google_apis;armeabi-v7a" -p "/opt/android-sdk/avd"
+      - apt install android-sdk
+
   pre_build:
     commands:
       - echo Pre Build started on `date`
       - git clone https://github.com/flutter/flutter.git -b stable
       - export PATH="$PATH:`pwd`/flutter/bin"
       - flutter precache
-      - flutter pub get
+      - flutter doctor
   build:
     commands:
       - echo Build started on `date`
@@ -43,4 +28,3 @@ phases:
 artifacts:
   files:
     - build/app/outputs/apk/release/*.apk
-  discard-paths: yes
