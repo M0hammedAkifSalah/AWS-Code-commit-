@@ -18,11 +18,11 @@ phases:
       - export PATH="$PATH:`pwd`/flutter/bin"
       - echo 'path saved to bin folder'
       - flutter clean
-      - flutter pub get
-      - flutter run --no-sound-null-safety
   build:
     commands:
       - echo Build started on `date`
+      - flutter doctor -v
+      - flutter pub get
       - flutter build apk --split-per-abi --no-tree-shake-icons
       - ls -al
   post_build:
