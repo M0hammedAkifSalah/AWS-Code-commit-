@@ -9,6 +9,8 @@ phases:
       - apt-get update -y
       - apt install android-sdk -y
       - apt install android-sdk
+      - apt install cmdline-tools;latest
+      - flutter doctor --android-licenses
       - apt install clang -y
       - apt install cmake -y
       - apt install ninja-build -y
