@@ -7,7 +7,7 @@ phases:
       - pwd
       - apt update -y
       - apt-get update -y
-      - sudo apt install default-jdk
+      - sudo apt install default-jdk -y
       - wget https://dl.google.com/android/repository/sdk-tools-linux-4333796.zip
       - unzip sdk-tools-linux-4333796.zip -d android-sdk
       - sudo mv android-sdk /opt/
