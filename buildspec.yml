@@ -22,7 +22,7 @@ phases:
   build:
     commands:
       - echo Build started on `date`
-      - flutter build appbundle --release --no-tree-shake-icons
+      - flutter build apk --split-per-abi --no-tree-shake-icons
       - ls -al
   post_build:
     commands:
