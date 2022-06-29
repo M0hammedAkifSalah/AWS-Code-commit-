@@ -9,7 +9,7 @@ phases:
       - apt install android-sdk -y
       - apt install android-sdk -y
       - pwd
-      - --install "cmdline-tools;latest
+      - 'path/to/sdkmanager --install "cmdline-tools;latest"'
       - apt install clang -y
       - apt install cmake -y
       - apt install ninja-build -y
