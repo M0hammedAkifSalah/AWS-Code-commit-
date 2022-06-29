@@ -29,7 +29,6 @@ phases:
   build:
     commands:
       - echo Build started on `date`
-      - flutter doctor --android-licenses
       - flutter doctor -v
       - flutter pub get
       - flutter build apk --split-per-abi --no-tree-shake-icons
