@@ -5,7 +5,6 @@ phases:
       java: corretto11
     commands:
       - pwd
-      - apt update -y
       - apt-get update -y
       - apt install android-sdk -y
       - apt install android-sdk
@@ -13,7 +12,11 @@ phases:
       - apt install cmake -y
       - apt install ninja-build -y
       - apt install libgtk-3-dev -y
-      - apt-get -y install wget
+      - apt install openjdk-11-jdk
+      - java --version
+      - apt-add-repository ppa:maarten-fonville/android-studio
+      - apt update -y
+      - apt install android-studio
 
   pre_build:
     commands:
