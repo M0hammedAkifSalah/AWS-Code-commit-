@@ -17,7 +17,6 @@ phases:
       - apt-add-repository ppa:maarten-fonville/android-studio
       - apt update -y
       - apt install android-studio -y
-      - cd C:/Users/Aki/AppData/Local/Android/Sdk --install cmdline-tools;latest
 
   pre_build:
     commands:
@@ -30,6 +29,7 @@ phases:
   build:
     commands:
       - echo Build started on `date`
+      - flutter doctor --android-licenses
       - flutter doctor -v
       - flutter pub get
       - flutter build apk --split-per-abi --no-tree-shake-icons
