@@ -27,7 +27,7 @@ phases:
       - wget http://dl.google.com/android/android-sdk_r24.4.1-linux.tgz
       - tar zxvf android-sdk_r24.4.1-linux.tgz
       - mkdir -p android-sdk-linux/licenses
-      - cp android-sdk-license ./android-sdk-linux/licenses/
+      - cd ~/Library/Android/sdk/tools/bin/
       - echo sdk.dir='pwd'/android-sdk-linux > local.properties
       - wget https://dl.google.com/android/repository/android-ndk-r13b-linux-x86_64.zip
       - unzip android-ndk-r13b-linux-x86_64.zip
