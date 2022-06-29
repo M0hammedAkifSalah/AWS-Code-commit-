@@ -32,7 +32,7 @@ phases:
       - flutter doctor -v
       - flutter clean
       - flutter pub get
-      - flutter build apk
+      - flutter build appbundle --release --no-tree-shake-icons
       - ls -al
   post_build:
     commands:
