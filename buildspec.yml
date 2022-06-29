@@ -2,8 +2,7 @@ version: 0.2
 phases:
   install:
     runtime-versions:
-      android: 28
-      java: corretto8
+      java: corretto11
     commands:
       - pwd
       - apt update -y
