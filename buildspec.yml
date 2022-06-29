@@ -13,6 +13,7 @@ phases:
       - apt install cmake -y
       - apt install ninja-build -y
       - apt install libgtk-3-dev -y
+      - apt-get -y install wget
 
   pre_build:
     commands:
@@ -22,6 +23,18 @@ phases:
       - export PATH="$PATH:`pwd`/flutter/bin"
       - echo 'path saved to bin folder'
       - flutter clean
+      - echo Nothing to do in the pre_build phase...
+      - wget http://dl.google.com/android/android-sdk_r24.4.1-linux.tgz
+      - tar zxvf android-sdk_r24.4.1-linux.tgz
+      - mkdir -p android-sdk-linux/licenses
+      - cp android-sdk-license ./android-sdk-linux/licenses/
+      - echo sdk.dir='pwd'/android-sdk-linux > local.properties
+      - wget https://dl.google.com/android/repository/android-ndk-r13b-linux-x86_64.zip
+      - unzip android-ndk-r13b-linux-x86_64.zip
+      - export ANDROID_NDK_HOME=`pwd`/android-ndk-r13b
+      - export PATH=${PATH}:${ANDROID_HOME}/tools:${ANDROID_HOME}/platform-tools:${ANDROID_NDK_HOME}
+      - echo "sdk.dir=$ANDROID_HOME" > local.properties
+      - echo "ndk.dir=$ANDROID_NDK_HOME" >> local.properties
   build:
     commands:
       - echo Build started on `date`
