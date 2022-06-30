@@ -6,7 +6,7 @@ phases:
     commands:
       - pwd
       - apt-get update -y
-      - apt install android-sdk= 33.0.0
+      - apt install android-sdk=33.0.0
       - apt install android-sdk -y
       - pwd
       - apt install clang -y
