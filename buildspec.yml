@@ -24,7 +24,6 @@ phases:
       - git clone https://github.com/flutter/flutter.git -b stable
       - echo 'git cloned'
       - export PATH="$PATH:`pwd`/flutter/bin"
-      - echo 'path saved to bin folder'
   build:
     commands:
       - echo Build started on `date`
@@ -32,6 +31,7 @@ phases:
       - pwd
       - flutter clean
       - flutter pub get
+      - flutter pub upgrade --major-versions
       - flutter build appbundle --release --no-tree-shake-icons
       - ls -al
   post_build:
