@@ -8,7 +8,8 @@ phases:
   pre_build:
     commands:
       - echo Pre Build started on `date`
-      - git clone https://github.com/flutter/flutter.git
+      - git clone https://github.com/flutter/flutter.git -b stable
+      - echo
       - export PATH="$PATH:`pwd`/flutter/bin"
       - flutter precache
       - flutter doctor
