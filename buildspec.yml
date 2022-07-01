@@ -16,7 +16,7 @@ phases:
       - apt-add-repository ppa:maarten-fonville/android-studio
       - apt update -y
       - apt install android-studio -y
-      - apt flutter upgrade -y
+      - flutter upgrade
 
   pre_build:
     commands:
