@@ -20,6 +20,7 @@ phases:
   pre_build:
     commands:
       - echo Pre Build started on `date`
+      - flutter config --no-analytics
       - git clone https://github.com/flutter/flutter.git -b stable
       - echo 'git cloned'
       - export PATH="$PATH:`pwd`/flutter/bin"
